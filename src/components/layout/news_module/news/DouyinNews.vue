@@ -13,8 +13,8 @@
 </template>
 
 <script>
-import global_settings from "../../../api/global_settings";
-import hotnews_api from "../../../api/hotnews_api";
+import global_settings from "../../../../api/global_settings";
+import hotnews_api from "../../../../api/news_module/hotnews_api";
 
 export default {
   name: "DouyinNews",
@@ -30,8 +30,8 @@ export default {
       try {
         let res = await hotnews_api.getDouyinNews()
         // console.log(res)
-        if (res.status === 200) {
-          this.dataList = res.data.data
+        if (res.status === 200 && res.data.code === 200) {
+          this.dataList = JSON.parse(res.data.data)
           // console.log(this.respondData)
         }
       } catch (e) {

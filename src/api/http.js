@@ -38,7 +38,7 @@ export default {
       request
         .post(url, JSON.stringify(params), {
           headers: {
-            'Content-Type': 'application/json;charset=UTF-8' // ,
+            'Content-Type': 'application/json;charset=UTF-8',
             // "Access-Control-Allow-Origin": "*"
           }
         })

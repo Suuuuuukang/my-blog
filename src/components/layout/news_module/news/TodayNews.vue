@@ -24,8 +24,8 @@
 </template>
 
 <script>
-import hotnews_api from "../../../api/hotnews_api";
-import global_settings from "../../../api/global_settings";
+import hotnews_api from "../../../../api/news_module/hotnews_api";
+import global_settings from "../../../../api/global_settings";
 
 export default {
   name: "TodayNews",
@@ -41,7 +41,7 @@ export default {
         let res = await hotnews_api.getDailyHotNews()
         // console.log(res)
         if (res.status === 200 && res.data.code === 200) {
-          this.dataList = res.data.newslist
+          this.dataList = JSON.parse(res.data.data)
         }
       } catch (e) {
         console.log(e)

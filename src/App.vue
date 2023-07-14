@@ -13,6 +13,7 @@
 <script>
 import PageHeader from "./components/layout/page/PageHeader";
 import LeftBar from "./components/layout/page/LeftBar";
+import user_api from "./api/user_api/user_api";
 export default {
   name: 'App',
   components: {LeftBar, PageHeader},
@@ -22,7 +23,7 @@ export default {
   },
   destroyed() {
     document.body.removeAttribute('class')
-  }
+  },
 }
 </script>
 

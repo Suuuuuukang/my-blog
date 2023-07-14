@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import article_api from "../../../api/article_api";
+import article_api from "../../../../api/news_module/article_api";
 
 export default {
   name: "quote",
@@ -18,10 +18,10 @@ export default {
     async loadData () {
       try {
         let res = await article_api.getQuote()
-        // console.log(res)
-        if (res.status === 200) {
+        console.log(res)
+        if (res.status === 200 && res.data.code === 200) {
           // console.log(res.data)
-          this.quote = res.data.renjian
+          this.quote = res.data.data
         }
       } catch (e) {
         console.log(e)

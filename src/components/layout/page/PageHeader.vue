@@ -27,6 +27,21 @@
             brightness_4
           </i>
         </span>
+
+        <router-link to="/login" v-if="!this.$session.get('user')">
+          <span class="mdui-btn mdui-btn-icon"
+                mdui-tooltip="{'content': '用户登录'}">
+          <i class="mdui-icon material-icons">&#xe853;</i>
+        </span>
+        </router-link>
+
+        <router-link to="/user" v-else>
+          <span class="mdui-btn mdui-btn-icon"
+                mdui-tooltip="{'content': '我的用户'}">
+            <i class="mdui-icon material-icons">&#xe851;</i>
+          </span>
+        </router-link>
+
       </div>
     </header>
 
@@ -41,8 +56,7 @@ export default {
   data () {
     return {
       isDark: false,
-      baseUrl: http.baseUrl,
-      netconfUrl: http.netconfUrl
+
     }
   },
   methods: {

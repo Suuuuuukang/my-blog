@@ -41,8 +41,8 @@
 </template>
 
 <script>
-import global_settings from "../../../api/global_settings";
-import article_api from "../../../api/article_api";
+import global_settings from "../../../../api/global_settings";
+import article_api from "../../../../api/news_module/article_api";
 
 export default {
   name: "RegionNews",
@@ -71,9 +71,9 @@ export default {
           this.selectRegion ,
           this.page * this.pageSize
         )
-        // console.log(res)
-        if (res.status === 200) {
-          this.dataList = res.data.data
+        console.log(res)
+        if (res.status === 200 && res.data.code === 200) {
+          this.dataList = JSON.parse(res.data.data)
           // console.log(this.dataList)
         }
       } catch (e) {

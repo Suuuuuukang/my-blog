@@ -12,8 +12,8 @@
 </template>
 
 <script>
-import Quote from "../article/quote";
-import DayHistory from "../article/DayHistory";
+import Quote from "../news_module/article/quote";
+import DayHistory from "../news_module/article/DayHistory";
 export default {
 name: "Articles",
   components: {DayHistory, Quote}

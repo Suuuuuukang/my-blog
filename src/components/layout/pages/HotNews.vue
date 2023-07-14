@@ -30,12 +30,12 @@
 </template>
 
 <script>
-import TodayNews from "../news/TodayNews";
-import ZhihuNews from "../news/ZhihuNews";
-import Quote from "../article/quote";
-import BiliBiliNews from "../news/BiliBiliNews";
-import DouyinNews from "../news/DouyinNews";
-import WeiBoNews from "../news/WeiBoNews";
+import TodayNews from "../news_module/news/TodayNews";
+import ZhihuNews from "../news_module/news/ZhihuNews";
+import Quote from "../news_module/article/quote";
+import BiliBiliNews from "../news_module/news/BiliBiliNews";
+import DouyinNews from "../news_module/news/DouyinNews";
+import WeiBoNews from "../news_module/news/WeiBoNews";
 export default {
   name: "HotNews",
   components: {WeiBoNews, DouyinNews, BiliBiliNews, Quote, ZhihuNews, TodayNews},

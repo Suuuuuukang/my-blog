@@ -62,6 +62,34 @@
         </div>
       </div>
 
+      <!--  mdui-collapse-item-open-->
+      <div class="mdui-collapse-item" id="privateNotes">
+        <div class="mdui-collapse-item-header mdui-list-item mdui-ripple"
+             @click="changeListItemStatus('privateNotes')"
+        >
+          <i class="
+              mdui-list-item-icon
+              mdui-icon
+              material-icons
+              mdui-text-color-blue">near_me</i>
+          <div class="mdui-list-item-content" style="font-weight: bold">私人内容</div>
+          <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+        </div>
+
+        <div class="mdui-collapse-item-body mdui-list">
+          <router-link to="/editorPage"
+                       class="mdui-list-item"
+                       :class="this.$route.meta.title === 'Notes' ? 'mdui-list-item-active' : ''">
+            <i class="mdui-list-item-icon mdui-icon material-icons">
+              &#xe0b7;
+            </i>
+            <div class="mdui-list-item-content">
+              Notes
+            </div>
+          </router-link>
+        </div>
+      </div>
+
       <li class="mdui-list-item"
           @click="closeMenu"
       >

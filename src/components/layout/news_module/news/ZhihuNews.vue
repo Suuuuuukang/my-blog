@@ -19,8 +19,8 @@
 </template>
 
 <script>
-import hotnews_api from "../../../api/hotnews_api";
-import global_settings from "../../../api/global_settings";
+import hotnews_api from "../../../../api/news_module/hotnews_api";
+import global_settings from "../../../../api/global_settings";
 
 export default {
   name: "ZhihuNews",
@@ -36,14 +36,8 @@ export default {
       try {
         let res = await hotnews_api.getZhihuNews()
         // console.log(res)
-        if (res.status === 200) {
-          // console.log(res.data.substring(4170))
-          let idx = res.data.length - 1
-          while (res.data[idx] !== '}') {
-            idx -= 1
-          }
-          this.respondData = JSON.parse(res.data.substring(0, idx + 1))
-          this.dataList = this.respondData['news']
+        if (res.status === 200 && res.data.code === 200) {
+          this.dataList = JSON.parse(res.data.data)
           // console.log(this.dataList)
         }
       } catch (e) {
